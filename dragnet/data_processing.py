@@ -321,7 +321,7 @@ def read_gold_standard_blocks_file(data_dir, fileroot, split_blocks=True):
 
 
 def _parse_content_or_comments_blocks(blocks, block_pct_tokens_thresh):
-    is_above_thresh = (np.array([ele[0] for ele in blocks]) > block_pct_tokens_thresh).astype(np.int)
+    is_above_thresh = (np.array([ele[0] for ele in blocks]) > block_pct_tokens_thresh).astype(int)
     token_counts = np.array([ele[1] for ele in blocks])
     all_tokens = list(itertools.chain.from_iterable(
         ele[2] for ele in blocks if ele[1] > 0))
