@@ -1,6 +1,5 @@
 cimport cython
 cimport numpy as np
-np.import_array()
 
 from libcpp.pair cimport pair
 from libc.stdint cimport uint32_t

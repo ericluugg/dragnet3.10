@@ -7,12 +7,14 @@ transpositions, etc. For the time being, however, it remains as presented in
 the article.
 """
 from __future__ import division
+
 import os
 import pkgutil
 
+import joblib
 from sklearn.pipeline import FeatureUnion, make_union
 
-from .compat import model_path, range_, string_, PY2, joblib
+from .compat import PY2, model_path, range_, string_
 from .features import get_feature
 
 
