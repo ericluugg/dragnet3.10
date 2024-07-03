@@ -4,13 +4,14 @@ import io
 import logging
 import os
 import pprint
-import numpy as np
 
+import joblib
+import numpy as np
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.pipeline import FeatureUnion
 
 from .blocks import simple_tokenizer
-from .compat import GridSearchCV, model_path, string_, train_test_split, str_cast, joblib
+from .compat import GridSearchCV, model_path, str_cast, string_, train_test_split
 from .data_processing import prepare_all_data
 from .util import dameraulevenshtein
 

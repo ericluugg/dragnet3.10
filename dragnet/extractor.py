@@ -185,7 +185,7 @@ class Extractor(BaseEstimator, ClassifierMixin):
             ``np.ndarray`` or List[``np.ndarray``]: array of binary predictions
                 for content (1) or not-content (0).
         """
-        if isinstance(documents, (str, bytes, unicode_, np.unicode_)):
+        if isinstance(documents, (str, bytes, unicode_, np.str_)):
             return self._predict_one(documents, **kwargs)
         else:
             return np.concatenate([self._predict_one(doc, **kwargs) for doc in documents])

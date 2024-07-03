@@ -73,7 +73,7 @@ ext_modules = [
 
 setup(
     name='dragnet',
-    version='2.0.4',
+    version='2.1.0',
     description='Extract the main article content (and optionally comments) from a web page',
     author='Matt Peters, Dan Lecocq',
     author_email='matt@moz.com, dan@moz.com',
@@ -107,11 +107,11 @@ setup(
     cmdclass={'build_ext': build_ext},
     ext_modules=cythonize(ext_modules, compiler_directives={'language_level': "2"}),
     install_requires=[
-        'Cython>=0.21.1',
+        'Cython>=3.0.0',
         'ftfy>=4.1.0',
         'lxml',
-        'numpy>=1.11.0',
-        'scikit-learn>=0.15.2',
+        'numpy<=1.26.3',
+        'scikit-learn<=1.22.2',
         'scipy>=0.17.0',
     ]
 )

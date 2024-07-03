@@ -170,7 +170,8 @@ cdef vector[string] _text_from_subtree(cetree.tree.xmlNode *tree,
         pass
 
 
-    cdef cetree.tree.xmlNode *node, *next_node
+    cdef cetree.tree.xmlNode *node
+    cdef cetree.tree.xmlNode *next_node
     cdef string tag
     cdef vector[string] to_add
     cdef size_t k
@@ -581,7 +582,8 @@ cdef class PartialBlock:
     cdef void recurse(self, cetree.tree.xmlNode* subtree, list results,
         cetree._Document doc):
 
-        cdef cetree.tree.xmlNode *node, *next_node
+        cdef cetree.tree.xmlNode *node
+        cdef cetree.tree.xmlNode *next_node
         cdef string tag
 
         # for CSS, we want to output all CSS tags for all levels in subtree
