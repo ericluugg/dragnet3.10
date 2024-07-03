@@ -107,11 +107,11 @@ setup(
     cmdclass={'build_ext': build_ext},
     ext_modules=cythonize(ext_modules, compiler_directives={'language_level': "2"}),
     install_requires=[
-        'Cython>=3.0.0',
+        'Cython>=0.21.1',
         'ftfy>=4.1.0,<5.0.0',
-        'lxml<=4.9.4',
-        'numpy<=1.24.4',
-        'scikit-learn<=1.5.0',
-        'scipy<=1.18.0',
+        'lxml',
+        'numpy>=1.11.0',
+        'scikit-learn>=0.15.2,<0.21.0',
+        'scipy>=0.17.0',
     ]
 )
