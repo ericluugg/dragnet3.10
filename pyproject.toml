@@ -2,6 +2,11 @@
 requires = [
     "setuptools>=61",
     "wheel",
-    "Cython>=3.0.1"
+    "Cython>=3.0.0",
+    "ftfy>=4.1.0",
+    "numpy<=1.26.3",
+    "lxml",
+    "scikit-learn<=1.2.2",
+    "scipy>=0.17.0"
 ]
 build-backend = "setuptools.build_meta"
