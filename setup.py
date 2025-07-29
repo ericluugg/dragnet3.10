@@ -70,6 +70,10 @@ ext_modules = [
               include_dirs=[get_include()],
               language="c++"),
 ]
+for ext in ext_modules:
+    if not hasattr(ext, 'extra_compile_args'):
+        ext.extra_compile_args = []
+    ext.extra_compile_args.append('-std=c++17')
 
 setup(
     name='dragnet',
