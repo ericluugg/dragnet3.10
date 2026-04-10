@@ -35,7 +35,22 @@ from numpy import get_include
 
 def find_libxml2_include():
     include_dirs = []
-    for d in ['/usr/include/libxml2', '/usr/local/include/libxml2']:
+    search_paths = [
+        '/usr/include/libxml2',
+        '/usr/local/include/libxml2',
+    ]
+    if sys.platform == 'darwin':
+        import subprocess
+        try:
+            sdk = subprocess.check_output(
+                ['xcrun', '--show-sdk-path'], text=True
+            ).strip()
+            search_paths.append(os.path.join(sdk, 'usr', 'include', 'libxml2'))
+        except Exception:
+            pass
+        for prefix in ['/opt/homebrew/opt/libxml2', '/usr/local/opt/libxml2']:
+            search_paths.append(os.path.join(prefix, 'include', 'libxml2'))
+    for d in search_paths:
         if os.path.exists(os.path.join(d, 'libxml/tree.h')):
             include_dirs.append(d)
     return include_dirs
